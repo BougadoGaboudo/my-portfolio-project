@@ -1,92 +1,8 @@
-// .gallery-h1 {
-//   text-align: center;
-//   font-size: 4rem;
-//   margin-top: 6rem;
-// }
-
-// .gallery-section {
-//   margin: 0 auto 8rem;
-//   width: $width;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   gap: 2rem;
-// }
-// .button-grp {
-//   display: flex;
-//   gap: 1rem;
-//   .button {
-//     display: inline-block;
-//     padding: 1rem 2rem;
-//     background-color: #fff;
-//     border: $dark-blue solid 0.1rem;
-//     border-radius: 2rem;
-//     color: $dark-blue;
-//     font-size: 1.5rem;
-//     cursor: pointer;
-//   }
-// }
-
-// .button:hover {
-//   background-color: $yellow;
-//   color: #fff;
-// }
-
-// .button:active,
-// .button.is-checked {
-//   background-color: $dark-blue;
-// }
-
-// .button.is-checked {
-//   color: white;
-// }
-
-
-// /* ---- isotope ---- */
-
-// .grid-gallery {
-//   width: $width;
-//   margin: 0 auto;
-// }
-
-// /* clear fix */
-// .grid-gallery:after {
-//   content: "";
-//   display: block;
-//   clear: both;
-// }
-
-// /* ---- .element-item ---- */
-
-// .grid-item {
-//   position: relative;
-//   float: left;
-  
-//   img {
-//     display: block;
-//     height: 100%;
-//     width: 100%;
-//     // object-fit: cover;
-//   }
-// }
-// // .portrait {
-// //   width: 20rem;
-// // }
-// // .paysage {
-// //   width: 40rem;
-// // }
-// .grid-item > * {
-//   margin: 0;
-//   padding: 0;
-// }
-
 .articles {
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
 }
 .articles-container {
-  /* max-width: 79.375rem; */
   margin: 0 auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
@@ -97,9 +13,9 @@
   flex-direction: column;
 }
 .articles-title {
-  font-size: 3.125em;
+  font-size: 4rem;
   margin-bottom: 2.8125rem;
-  color: var(--blue);
+  color: $dark-blue;
 }
 .articles-filter {
   margin-bottom: 3em;
@@ -112,38 +28,139 @@
   flex-wrap: wrap;
 }
 .filter-articles-item {
-  cursor: pointer;
-  color: var(--blue);
-  border: var(--blue) solid 0.1em;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border: $dark-blue solid 0.1rem;
+  border-radius: 2rem;
+  color: $dark-blue;
+  font-size: 1.5rem;
   transition: all 0.3s;
   cursor: pointer;
-  padding: 0.5em 1em;
-  font-size: 2.313em;
-  border-radius: 2em;
 }
 .filter-articles-item:hover,
-.filter-articles-item:focus{
+.filter-articles-item:focus {
   transition: all 0.2s;
   color: white;
-  background-color: var(--yellow);
-  border: var(--blue) solid 0.1em;
+  background-color: $yellow;
+  border: $dark-blue solid 0.1rem;
 }
-.filter-articles-item.active{
+.filter-articles-item.active {
   transition: all 1s;
   color: white;
-  background-color: var(--blue);
-  border: var(--blue) solid 0.1em;
+  background-color: $dark-blue;
+  border: $dark-blue solid 0.1rem;
+}
+.article {
+  cursor: pointer;
 }
 .articles-items {
   margin: 0 auto;
   transition: all 0.3s;
 }
-.articles-item{
+.articles-item {
   width: 20em;
   margin-bottom: 1.25em;
 }
-.articles-item-paysage{
+.articles-item-paysage {
   width: 41.25em;
   margin-bottom: 1.25em;
+}
+
+@media (max-width: 430px) {
+  .articles-item {
+    width: 100%;
+  }
+  /* Cancel fitWidth */
+  .articles-item {
+    width: auto !important;
+  }
+}
+
+.article-image {
+  display: block;
+  position: relative;
+  border-radius: 0.1875rem;
+  overflow: hidden;
+}
+.article-image:hover img {
+  transform: scale(1.03);
+}
+.article-image img.init {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: 0.5rem solid white;
+  border-radius: 50%;
+  padding: 0 2rem;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
 }
