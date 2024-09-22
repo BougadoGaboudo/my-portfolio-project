@@ -1,0 +1,52 @@
+.project-h1 {
+    text-align: center;
+    font-size: 4rem;
+}
+.project-section{
+    margin: 0 auto;
+    width: $width;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.column{flex-direction: column;}
+.column h1{
+    color: $dark-blue;
+    font-size: 3.125rem;
+    margin-bottom: 1rem;
+}
+.site{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.site1, .site2, .site3{
+    border-radius: 0.5rem;
+    width: 30rem;
+    height: 30rem;
+    margin: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.site1:hover, .site1:focus,
+.site2:hover, .site2:focus,
+.site3:hover, .site3:focus{
+    transition: all 0.3s ease-out;
+    transform: scale(1.05);
+}
+.site1 h4, .site2 h4, .site3 h4{
+    padding: 0.5rem;
+    font-size: 1.875rem;
+    color: $dark-blue;
+}
+.site1 p, .site2 p, .site3 p{
+    padding: 1rem 0.5rem 0 0.5rem;
+    font-size: 1.313rem;
+    color: $dark-blue;
+    text-align: justify;
+}
+.size-project{width: 100%;}

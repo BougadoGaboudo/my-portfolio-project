@@ -1,0 +1,42 @@
+footer {
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    h6 {
+      font-size: 1.5rem;
+      color: $dark-blue;
+      margin-bottom: 0.5rem;
+    }
+    .contact {
+      text-align: center;
+      p {
+        font-size: 1.313rem;
+        color: $dark-blue;
+      }
+    }
+    .social {
+      text-align: center;
+      margin-left: 5rem;
+      a {
+        margin-right: 0.5rem;
+        &:last-child {
+          margin-right: 0;
+        }
+        .logoRS {
+          width: 32px;
+        }
+      }
+    }
+  }
+  .cp p {
+    font-size: 1.313rem;
+    color: $dark-blue;
+  }
+}

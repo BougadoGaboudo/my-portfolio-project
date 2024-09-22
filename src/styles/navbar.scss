@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  height: 128px;
+  ul {
+    li {
+      display: inline;
+      padding-left: 2rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      a {
+        font-size: 1.75rem;
+        color: $dark-blue;
+        font-weight: bold;
+        transition: 0.2s ease-out;
+
+        &:hover {
+          color: $light-blue;
+        }
+      }
+    }
+  }
+}

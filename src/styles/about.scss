@@ -1,0 +1,33 @@
+.presentation {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// .logo-size{width: 300px;}
+
+.about {
+  position: relative;
+}
+.txt-about {
+  margin-left: 2em;
+  width: 500px;
+  text-align: justify;
+}
+.txt-about h4 {
+  font-size: 3.125em;
+  color: $dark-blue;
+}
+.txt-about h1 {
+  position: relative;
+  left: 15%;
+  margin: 0.1em 0 0.4em;
+  font-family: "Salsa";
+  font-size: 4.125em;
+  background-image: linear-gradient(to right, $yellow, $dark-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.txt-about p {
+  font-size: 1.313em;
+}

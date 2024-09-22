@@ -1,0 +1,51 @@
+.home-bg {
+  position: relative;
+  height: 100vh;
+  background-image: url(/img/ayaka.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  //   background-position: center;
+  .home {
+    position: absolute;
+    top: 8%;
+    right: 4%;
+    text-align: right;
+    scale: 0.8;
+
+    @media screen and (max-width: 1310px) {
+      top: 15%;
+    }
+
+    h1 {
+      color: #fff;
+    }
+    img {
+      width: 512px;
+      @media screen and (max-width: 1310px) {
+        width: 384px;
+      }
+      @media screen and (max-width: 470px) {
+        width: 256px;
+      }
+    }
+    h2 {
+      // background: linear-gradient(to right, $yellow, $dark-blue);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      // -webkit-text-stroke: 0.1px #fff;
+      color: #fff;
+      @media screen and (max-width: 1310px) {
+        font-size: 4.2rem;
+      }
+      @media screen and (max-width: 992px) {
+        font-size: 3.5rem;
+      }
+      @media screen and (max-width: 865px) {
+        font-size: 3rem;
+      }
+    }
+    .mbot {
+      margin-bottom: 0.5em;
+    }
+  }
+}

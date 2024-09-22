@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+@font-face {
+  font-family: "Core Bandi Face";
+  src: url(/font/Core\ Bandi\ Face\ W01\ Regular.ttf);
+}
+
+$dark-blue: #0b2658;
+$light-blue: #7aa1e2;
+$yellow: #f7b827;
+$width: 75vw;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Core Bandi Face";
+}
+
+hr {
+  color: $dark-blue;
+}
+h1 {
+  font-family: Salsa;
+  font-size: 7.375rem;
+  color: $dark-blue;
+}
+h2 {
+  font-size: 5.563rem;
+  color: $dark-blue;
+}
+.primary-btn {
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  font-size: 2.313rem;
+  color: #fff;
+  border-radius: 2em;
+  border: 0.1em solid #fff;
+  background: linear-gradient(to right, $yellow, $dark-blue);
+  &:hover {
+    background: $light-blue;
+  }
+
+  @media screen and (max-width: 1310px) {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 470px) {
+    font-size: 1.5rem;
+  }
+}
