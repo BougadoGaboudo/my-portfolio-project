@@ -33,15 +33,6 @@ const Navbar = ({color}) => {
 
         <li>
           <NavLink
-            to="/bts"
-            className={(nav) => (nav.isActive ? "nav nav-active" : "nav")}
-          >
-            BTS SIO
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
             to="/gallery"
             className={(nav) => (nav.isActive ? "nav nav-active" : "nav")}
           >
