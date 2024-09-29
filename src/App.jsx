@@ -5,15 +5,15 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
-import Bts from "./pages/Bts";
+import TextAnimation from "./components/TextAnimation";
 
 function App() {
   return (
     <BrowserRouter>
+      <TextAnimation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route path="/bts" element={<Bts />}></Route>
         <Route path="/gallery" element={<Gallery />}></Route>
         <Route path="/project" element={<Project />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
