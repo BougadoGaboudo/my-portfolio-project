@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroArea from "../components/HeroArea";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
+import Preloader from "../components/Preloader";
 
 const Home = () => {
   const images = [
@@ -12,6 +13,7 @@ const Home = () => {
   ];
   return (
     <>
+      <Preloader />
       <Navbar />
       <HeroArea bg={"home-bg"} page={"home"} />
       <Carousel />
