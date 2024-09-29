@@ -59,11 +59,11 @@ const CardImg = () => {
 
   useEffect(() => {
     if (selectedImageIndex !== null) {
-      document.body.style.overflow = "hidden"; // Désactiver le défilement
+      document.body.style.overflow = "hidden"; // Désactiver le scroll vertical
 
-      if (closeBtnRef.current) {
-        closeBtnRef.current.focus(); // Focus the close button when lightbox opens
-      }
+      // if (closeBtnRef.current) {
+      //   closeBtnRef.current.focus(); // Focus the close button when lightbox opens
+      // }
 
       const focusableElements =
         "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])";
@@ -98,7 +98,7 @@ const CardImg = () => {
 
       return () => {
         modal.removeEventListener("keydown", handleTab);
-        document.body.style.overflow = ""; // Réactiver le défilement
+        document.body.style.overflow = ""; // Réactiver le scroll vertical
       };
     }
   }, [selectedImageIndex]);

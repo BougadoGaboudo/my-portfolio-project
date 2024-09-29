@@ -18,9 +18,9 @@ export const imgGallery = [
     style: "articles-item-paysage",
   },
   {
-    title: "Merry Christmas 2023",
-    img: "/img/noel2023.jpg",
-    type: "original",
+    title: "Study",
+    img: "/img/studyfemme2.jpg",
+    type: "study",
     style: "articles-item",
   },
 
@@ -37,27 +37,51 @@ export const imgGallery = [
     type: "fanart",
     style: "articles-item",
   },
+
+  {
+    title: "Study",
+    img: "/img/studyfemme1.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Happy New Year 2023",
+    img: "/img/noel.jpg",
+    type: "original",
+    style: "articles-item",
+  },
+
+  {
+    title: "Study",
+    img: "/img/studyrequin.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+
+  {
+    title: "Achille - Character Design",
+    img: "/img/achille.jpg",
+    type: "original",
+    style: "articles-item-paysage",
+  },
+
   {
     title: "Keqing from Genshin Impact",
     img: "/img/keqingfanart.jpg",
     type: "fanart",
     style: "articles-item",
   },
+
   {
-    title: "Jean from Genshin Impact",
-    img: "/img/jeanfanart.jpg",
-    type: "fanart",
+    title: "Study",
+    img: "/img/studyfemme3.jpg",
+    type: "study",
     style: "articles-item",
   },
+
   {
-    title: "Dragon",
-    img: "/img/dragon.jpg",
-    type: "original",
-    style: "articles-item-paysage",
-  },
-  {
-    title: "Happy New Year 2022",
-    img: "/img/hny2022.jpg",
+    title: "Happy New Year 2021",
+    img: "/img/hny2021.jpg",
     type: "original",
     style: "articles-item",
   },
@@ -68,23 +92,18 @@ export const imgGallery = [
     style: "articles-item",
   },
   {
-    title: "Yae Miko from Genshin Impact",
-    img: "/img/yaefanart.jpg",
-    type: "fanart",
-    style: "articles-item",
-  },
-  {
-    title: "Raiden Shogun from Genshin Impact",
-    img: "/img/raidenfanart.jpg",
+    title: "Jean from Genshin Impact",
+    img: "/img/jeanfanart.jpg",
     type: "fanart",
     style: "articles-item",
   },
   {
     title: "Study",
-    img: "/img/studyrequin.jpg",
+    img: "/img/studyfemme16.jpg",
     type: "study",
     style: "articles-item",
   },
+
   {
     title: "Study",
     img: "/img/studypoissonrouge.jpg",
@@ -93,8 +112,104 @@ export const imgGallery = [
   },
   {
     title: "Study",
+    img: "/img/studyfemme4.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Juliette - Character Design",
+    img: "/img/juliette.jpg",
+    type: "original",
+    style: "articles-item-paysage",
+  },
+  {
+    title: "Happy New Year 2022",
+    img: "/img/hny2022.jpg",
+    type: "original",
+    style: "articles-item",
+  },
+  {
+    title: "Study",
+    img: "/img/studyfemme9.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Jean from Genshin Impact",
+    img: "/img/jeansummer.jpg",
+    type: "fanart",
+    style: "articles-item",
+  },
+
+  {
+    title: "Study",
+    img: "/img/studyhomme1.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Gaston - Character Design",
+    img: "/img/gaston.jpg",
+    type: "original",
+    style: "articles-item-paysage",
+  },
+
+  {
+    title: "Study",
     img: "/img/studypiaf.jpg",
     type: "study",
+    style: "articles-item",
+  },
+
+  {
+    title: "Raiden Shogun from Genshin Impact",
+    img: "/img/raidenfanart.jpg",
+    type: "fanart",
+    style: "articles-item",
+  },
+  {
+    title: "Study",
+    img: "/img/studyhomme2.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+
+  {
+    title: "Achille - Character Design",
+    img: "/img/achillex3.jpg",
+    type: "original",
+    style: "articles-item-paysage",
+  },
+
+  {
+    title: "Ayaka from Genshin Impact",
+    img: "/img/ayaka2022.jpg",
+    type: "fanart",
+    style: "articles-item",
+  },
+  {
+    title: "My character Bougado from Grand Fantasia",
+    img: "/img/gfsakura.jpg",
+    type: "fanart",
+    style: "articles-item",
+  },
+  {
+    title: "Kugisaki Nobara",
+    img: "/img/nobara.jpg",
+    type: "fanart",
+    style: "articles-item-paysage",
+  },
+
+  {
+    title: "Study",
+    img: "/img/studyfemme8.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Yae Miko from Genshin Impact",
+    img: "/img/yaefanart.jpg",
+    type: "fanart",
     style: "articles-item",
   },
   {
@@ -103,4 +218,36 @@ export const imgGallery = [
     type: "study",
     style: "articles-item",
   },
+
+  {
+    title: "Xiangling from Genshin Impact",
+    img: "/img/xianglingfanart.jpg",
+    type: "fanart",
+    style: "articles-item-paysage",
+  },
+  {
+    title: "Study",
+    img: "/img/studyfemme15.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Study",
+    img: "/img/studyfemme18.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Study",
+    img: "/img/studypaysage2.jpg",
+    type: "study",
+    style: "articles-item",
+  },
+  {
+    title: "Dragon",
+    img: "/img/dragon.jpg",
+    type: "original",
+    style: "articles-item-paysage",
+  },
+  
 ];
