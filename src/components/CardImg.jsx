@@ -169,10 +169,7 @@ const CardImg = () => {
                   className="article-image"
                   onClick={() => setSelectedImageIndex(index)}
                 >
-                  <img
-                    src={`${import.meta.env.BASE_URL}${image.img}`}
-                    alt={image.title}
-                  />
+                  <img src={image.img} alt={image.title} />
                 </div>
               </article>
             ))}
