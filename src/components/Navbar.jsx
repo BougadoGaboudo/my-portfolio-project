@@ -9,7 +9,11 @@ const Navbar = ({ color }) => {
           to="/"
           className={(nav) => (nav.isActive ? "nav nav-active" : "nav")}
         >
-          <img src="/img/NewLogo.png" alt="Logo" height={88} />
+          <img
+            src="/my-portfolio-project/img/NewLogo.png"
+            alt="Logo"
+            height={88}
+          />
         </NavLink>
 
         <ul>
