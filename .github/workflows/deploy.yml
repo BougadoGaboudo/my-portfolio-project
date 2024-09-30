@@ -1,0 +1,58 @@
+# Nom de la pipeline
+name: Déploiement sur Github Pages
+
+# Quand s'exécute la pipeline
+on:
+  push: # Quand on pousse
+    branches: ["main"] #...sur la branche main
+
+  workflow_dispatch:
+
+# Des histoires de permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Des histoires de parallélisme de jobs
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Nos jobs !
+jobs:
+  deploiement:
+    name: Déploiement sur Github Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # Se place dans le repo
+      - name: Changement de repo
+        uses: actions/checkout@v4
+
+      # Configure Node.js (ici on spécifie la version)
+      - name: Configurer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.13.1"
+
+      # Installer les dépendances
+      - name: Installer les dépendances
+        run: npm install
+
+      # Construire l'application
+      - name: Construire l'application
+        run: npm run build
+
+      # Permet de faire en sorte que votre site puisse être envoyé sur GitHub Pages
+      - name: Téléversement des artefacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "build"
+
+      # Déploie les fichiers sur GitHub Pages
+      - name: Déploiement vers GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
