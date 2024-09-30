@@ -50,7 +50,7 @@ jobs:
       - name: Téléversement des artefacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "build"
+          path: "dist"
 
       # Déploie les fichiers sur GitHub Pages
       - name: Déploiement vers GitHub Pages
