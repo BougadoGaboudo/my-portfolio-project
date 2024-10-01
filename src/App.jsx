@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
@@ -16,7 +16,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter basename={import.meta.env.BASE_URL}>
       {!isAnimationDone ? (
         <TextAnimation onAnimationComplete={handleAnimationComplete} />
       ) : (
@@ -28,7 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       )}
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
