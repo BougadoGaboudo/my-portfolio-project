@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 
-const TextAnimation = ({ onAnimationComplete }) => {
+const TextAnimation = () => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const TextAnimation = ({ onAnimationComplete }) => {
                 duration: 0.5,
                 onComplete: () => {
                   setVisible(false);
-                  onAnimationComplete(); // Appeler la fonction de rappel
                 },
               });
             },
@@ -45,7 +44,7 @@ const TextAnimation = ({ onAnimationComplete }) => {
     return () => {
       myText.revert();
     };
-  }, [onAnimationComplete]);
+  }, []);
 
   return visible ? (
     <section id="intro-slider" className="intro-section">

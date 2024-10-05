@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = ({ color }) => {
+const Navbar = () => {
   return (
     <>
       <nav>
@@ -9,11 +9,7 @@ const Navbar = ({ color }) => {
           to="/"
           className={(nav) => (nav.isActive ? "nav nav-active" : "nav")}
         >
-          <img
-            src="/my-portfolio-project/img/NewLogo.png"
-            alt="Logo"
-            height={88}
-          />
+          <img src="/img/NewLogo.png" alt="Logo" height={88} />
         </NavLink>
 
         <ul>

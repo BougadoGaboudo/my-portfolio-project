@@ -5,7 +5,7 @@ const HeroArea = ({ bg, page }) => {
   return (
     <section className={bg}>
       <div className={page}>
-        <img src="/my-portfolio-project/img/NewLogo.png" alt="Logo" />
+        <img src="/img/NewLogo.png" alt="Logo" />
         <h2>Illustrator . Character Design</h2>
         <h2 className="mbot">Front Developer . Webdesigner</h2>
         <NavLink to="/gallery" className="primary-btn">
