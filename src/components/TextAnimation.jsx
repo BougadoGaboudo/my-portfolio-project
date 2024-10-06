@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 
-const TextAnimation = () => {
+const TextAnimation = ({ onComplete }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -28,13 +28,8 @@ const TextAnimation = () => {
             delay: 1,
             ease: "power2.inOut",
             onComplete: () => {
-              gsap.to(introSection, {
-                opacity: 0,
-                duration: 0.5,
-                onComplete: () => {
-                  setVisible(false);
-                },
-              });
+              setVisible(false);
+              onComplete();
             },
           });
         },
