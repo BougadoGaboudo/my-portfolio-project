@@ -41,24 +41,23 @@ nav {
     }
 
     ul {
-      display: none; // Cacher la liste des liens par défaut sur mobile
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       position: fixed;
       top: 0;
-      left: 0;
+      left: -100%;
       height: 100vh;
       width: 100vw;
       background-color: #fff;
-      transition: opacity 0.3s ease-out;
+      transition: transform 0.3s ease-out;
       z-index: 999;
-      opacity: 0; // Masqué par défaut
     }
 
     ul.open {
-      display: flex; // Affiche la liste quand le menu est ouvert
-      opacity: 1; // Visible quand ouvert
+
+      transform: translateX(100%);
     }
 
     li {
