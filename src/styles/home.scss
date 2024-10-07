@@ -11,12 +11,16 @@
     top: 8%;
     right: 4%;
     text-align: right;
-    scale: 0.8;
+    // scale: 0.8;
     padding: 2rem;
 
-    @media screen and (max-width: 1310px) {
-      top: 15%;
+
+    @media screen and (max-width: 1536px) { // Écrans de 16 pouces et moins
+      top: 0;
+      padding: 0;
+      scale: 0.7;
     }
+    
 
     h1 {
       color: #fff;

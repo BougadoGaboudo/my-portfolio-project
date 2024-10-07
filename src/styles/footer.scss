@@ -9,21 +9,30 @@ footer {
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
+    
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
     h6 {
       font-size: 1.5rem;
       color: $dark-blue;
       margin-bottom: 0.5rem;
     }
-    .contact {
+    .contact-footer {
       text-align: center;
       p {
         font-size: 1.313rem;
         color: $dark-blue;
       }
     }
-    .social {
+    .social-footer {
       text-align: center;
       margin-left: 5rem;
+      @media screen and (max-width: 768px) {
+      margin-left: 0rem;        
+      }
       a {
         margin-right: 0.5rem;
         &:last-child {

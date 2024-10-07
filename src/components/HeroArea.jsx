@@ -18,13 +18,13 @@ const HeroArea = ({ bg, page }) => {
       )
       .fromTo(
         "#illu",
-        { xPercent: 100, duration: 1 },
+        { xPercent: 100, duration: 2.5 },
         { xPercent: 0, opacity: 1 },
         "<0.5"
       )
       .fromTo(
         "#dev",
-        { xPercent: -100, duration: 1 },
+        { xPercent: -100, duration: 2.5 },
         { xPercent: 0, opacity: 1 },
         "<0.5"
       )

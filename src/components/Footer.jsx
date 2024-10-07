@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer">
-        <div className="contact">
+        <div className="contact-footer">
           <h6>Contact</h6>
           <p>bougadogaboudo@gmail.com</p>
         </div>
-        <div className="social">
+        <div className="social-footer">
           <h6>Social</h6>
           <a href="https://twitter.com/BougadoGaboudo" target="_blank">
             <img className="logoRS" src="img/twitter.png" alt="Logo Twitter" />
