@@ -5,12 +5,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   //   background-position: center;
-  .home {
+  #home {
+    overflow: hidden;
     position: absolute;
     top: 8%;
     right: 4%;
     text-align: right;
     scale: 0.8;
+    padding: 2rem;
 
     @media screen and (max-width: 1310px) {
       top: 15%;
@@ -29,10 +31,6 @@
       }
     }
     h2 {
-      // background: linear-gradient(to right, $yellow, $dark-blue);
-      // -webkit-background-clip: text;
-      // -webkit-text-fill-color: transparent;
-      // -webkit-text-stroke: 0.1px #fff;
       color: #fff;
       @media screen and (max-width: 1310px) {
         font-size: 4.2rem;

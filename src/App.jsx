@@ -22,7 +22,10 @@ function App() {
       <TextAnimation onComplete={() => setAnimationFinished(true)} />
       <div className={`page-content ${contentVisible ? "visible" : ""}`}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home animationFinished={animationFinished} />}
+          />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/project" element={<Project />} />

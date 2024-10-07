@@ -6,6 +6,8 @@ const TextAnimation = ({ onComplete }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    document.body.style.overflow = "hidden"; // désac le scroll
+
     const myText = new SplitType("#my-text");
     const introSection = document.querySelector("#intro-slider");
 
@@ -30,6 +32,13 @@ const TextAnimation = ({ onComplete }) => {
             onComplete: () => {
               setVisible(false);
               onComplete();
+
+              const timeoutId = setTimeout(() => {
+                document.body.style.overflow = "auto";
+              }, 100);
+
+              // Nettoyage du setTimeout lors du démontage
+              return () => clearTimeout(timeoutId);
             },
           });
         },
@@ -38,8 +47,9 @@ const TextAnimation = ({ onComplete }) => {
 
     return () => {
       myText.revert();
+      document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [onComplete]);
 
   return visible ? (
     <section id="intro-slider" className="intro-section">

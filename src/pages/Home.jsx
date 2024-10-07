@@ -5,12 +5,12 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import Preloader from "../components/Preloader";
 
-const Home = () => {
+const Home = ({ animationFinished }) => {
   return (
     <>
       {/* <Preloader /> */}
       <Navbar />
-      <HeroArea bg={"home-bg"} page={"home"} />
+      {animationFinished && <HeroArea bg={"home-bg"} page={"home"} />}
       <Carousel />
       <hr />
       <Footer />
