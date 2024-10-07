@@ -10,7 +10,11 @@ const Home = ({ animationFinished }) => {
     <>
       {/* <Preloader /> */}
       <Navbar />
-      {animationFinished && <HeroArea bg={"home-bg"} page={"home"} />}
+      {animationFinished && (
+        <div className="home-desktop">
+          <HeroArea bg={"home-bg"} page={"home"} />
+        </div>
+      )}
       <Carousel />
       <hr />
       <Footer />
