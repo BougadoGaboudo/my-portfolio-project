@@ -40,10 +40,10 @@ const HeroArea = ({ bg, page }) => {
     <section className={bg}>
       <div id={page}>
         <img id="logo" src="/img/NewLogo.png" alt="Logo" />
-        <h2 id="illu">Illustrator . Character Design</h2>
-        <h2 id="dev" className="mbot">
+        <h1 id="illu">Illustrator . Character Design</h1>
+        <h1 id="dev" className="mbot">
           Front Developer . Webdesigner
-        </h2>
+        </h1>
         <NavLink id="button" to="/gallery" className="primary-btn">
           See my work
         </NavLink>

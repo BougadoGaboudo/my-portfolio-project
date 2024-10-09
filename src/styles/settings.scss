@@ -16,6 +16,7 @@ $width: 75vw;
   text-decoration: none;
   list-style: none;
   font-family: "Core Bandi Face";
+  color: $dark-blue;
 }
 
 .page-content {
@@ -31,12 +32,17 @@ hr {
 }
 h1 {
   font-family: Salsa;
-  font-size: 7.375rem;
-  color: $dark-blue;
+  font-size: 5rem;
 }
 h2 {
-  font-size: 5.563rem;
-  color: $dark-blue;
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+
+p {
+font-size: 1.2rem;
 }
 .primary-btn {
   display: inline-block;
@@ -57,4 +63,11 @@ h2 {
   @media screen and (max-width: 470px) {
     font-size: 1.5rem;
   }
+}
+
+.line-section {
+  width: 75%;
+  height: 1px;
+  background-color: $dark-blue;
+  margin: 2rem auto;
 }

@@ -1,51 +1,13 @@
-// import React, { useEffect } from "react";
-// import { imgCarousel } from "../data/carousel";
-// import { carouselDragging } from "../function/carouselDrag";
-
-// const Carousel = () => {
-//   useEffect(() => {
-//     const cleanup = carouselDragging();
-//     return () => {
-//       if (cleanup) cleanup();
-//     };
-//   }, []);
-
-//   return (
-//     <section className="section-carousel">
-//       <div className="wrapper-carousel">
-//         <i id="left" className="fa-solid fa-angle-left"></i>
-//         <ul className="carousel">
-//           {imgCarousel.map((item, index) => (
-//             <li key={index} className="card">
-//               <img
-//                 src={item.img}
-//                 alt={`Image ${index + 1}`}
-//                 draggable="false"
-//               />
-//             </li>
-//           ))}
-//         </ul>
-//         <i id="right" className="fa-solid fa-angle-right"></i>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Carousel;
-
-import React, { useEffect } from "react";
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import { imgCarousel } from "../data/carousel";
+import PrimaryBtn from "./PrimaryBtn";
 
 const Carousel = () => {
-  useEffect(() => {
-    // Si vous avez besoin d'initialiser quelque chose ou d'ajouter des effets secondaires
-  }, []);
-
   return (
-    <section className="section">
-      <div className="wrapper-carousel">
+    <section className="carousel-section">
+      <div className="carousel-wrapper">
         <Splide
           options={{
             type: "loop",
@@ -64,6 +26,9 @@ const Carousel = () => {
             </SplideSlide>
           ))}
         </Splide>
+      </div>
+      <div className="carousel-btn">
+        <PrimaryBtn link={"/gallery"} text={"More work"} />
       </div>
     </section>
   );

@@ -1,22 +1,28 @@
-.section {
-  padding: 2rem;
-}
-
-.wrapper-carousel {
-  position: relative;
-  .splide__slide {
-    width: auto !important;
-    img {
-      display: block;
-      height: 600px;
-
-      @media screen and (max-width:768px) {
-      height: 400px;
-        
+.carousel-section {
+  padding: 0 2rem;
+  .carousel-wrapper {
+    position: relative;
+    .splide__slide {
+      width: auto !important;
+      img {
+        display: block;
+        height: 600px;
+  
+        @media screen and (max-width:768px) {
+        height: 400px;
+          
+        }
       }
     }
   }
+  .carousel-btn {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
 
 .splide__arrow {
   background-color: $dark-blue;

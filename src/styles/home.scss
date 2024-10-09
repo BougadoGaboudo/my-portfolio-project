@@ -12,7 +12,13 @@
   background-image: url(/img/ayaka.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  //   background-position: center;
+  background-position: center;
+  @media screen and (max-width: 1367px) { 
+    background-image: url(/img/ayaka1366.jpg);
+  }
+  @media screen and (max-width: 769px) { 
+    background-image: url(/img/ayaka768.jpg);
+  }
   #home {
     overflow: hidden;
     position: absolute;
@@ -24,7 +30,7 @@
 
 
     @media screen and (max-width: 1536px) { // Écrans de 16 pouces et moins
-      top: 0;
+      top: 4%;
       padding: 0;
       scale: 0.7;
     }
@@ -42,7 +48,7 @@
         width: 256px;
       }
     }
-    h2 {
+    h1 {
       color: #fff;
       @media screen and (max-width: 1310px) {
         font-size: 4.2rem;
