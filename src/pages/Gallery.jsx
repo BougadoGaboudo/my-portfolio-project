@@ -11,7 +11,7 @@ const Gallery = () => {
       <CardImg />
       <hr />
       <Footer />
-    <script src="/src/function/gallery.js"></script>
+    {/* <script src="/src/function/gallery.js"></script> */}
 
     </>
   );

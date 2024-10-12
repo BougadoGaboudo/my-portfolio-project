@@ -46,7 +46,7 @@ export const imgGallery = [
   },
   {
     title: "Happy New Year 2023",
-    img: "/img/noel.jpg",
+    img: "/img/noel2023.jpg",
     type: "original",
     style: "articles-item",
   },
@@ -72,6 +72,12 @@ export const imgGallery = [
     style: "articles-item",
   },
 
+  {
+    title: "Dragon",
+    img: "/img/dragon.jpg",
+    type: "original",
+    style: "articles-item",
+  },
   {
     title: "Study",
     img: "/img/studyfemme3.jpg",
@@ -242,11 +248,5 @@ export const imgGallery = [
     img: "/img/studypaysage2.jpg",
     type: "study",
     style: "articles-item",
-  },
-  {
-    title: "Dragon",
-    img: "/img/dragon.jpg",
-    type: "original",
-    style: "articles-item-paysage",
   },
 ];
