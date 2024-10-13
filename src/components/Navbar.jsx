@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -7,6 +7,19 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; // désac le scroll
+    } else {
+      document.body.style.overflow = "auto"; // réactive le scroll
+    }
+
+    // Nettoyage pour restaurer le style si le composant est démonté
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <>
