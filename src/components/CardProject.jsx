@@ -6,18 +6,18 @@ const CardProject = () => {
     <section className="project-section">
       <h1 className="project-h1">Web projects</h1>
 
-      <div className="site">
+      <div className="project-wrapper">
         {myProjects.map((project, index) => (
-          <div className="site1 hiddenX">
+          <div className="project-card" key={index}>
             <a href={project.url} target="_blank">
               <h4>{project.title}</h4>
               <img
-                className="size-project"
+                className="project-img"
                 src={project.img}
                 alt={project.title}
               />
               <p>{project.description}</p>
-              <p>Langages : {project.tech}</p>
+              <p>Stack : {project.tech}</p>
             </a>
           </div>
         ))}
