@@ -8,7 +8,7 @@ const Contact = () => {
       <Navbar />
       <hr />
       <section className="contact-section">
-            <div className="contact">
+            <div className="contact-wrapper">
                 <h1>Contact</h1>
                 <h4>bougadogaboudo@gmail.com</h4>
                 <p>Currently accepting business and commercial-type inquires.</p>
