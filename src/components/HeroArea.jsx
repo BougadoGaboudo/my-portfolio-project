@@ -38,7 +38,7 @@ const HeroArea = ({ bg, page }) => {
 
   return (
     <section className={bg}>
-      <div id={page}>
+      {/* <div id={page}>
         <img id="logo" src="/img/NewLogo.png" alt="Logo" />
         <h1 id="illu">Illustrator . Character Design</h1>
         <h1 id="dev" className="mbot">
@@ -47,6 +47,12 @@ const HeroArea = ({ bg, page }) => {
         <NavLink id="button" to="/gallery" className="primary-btn">
           See my work
         </NavLink>
+      </div> */}
+      <div className="hero-area">
+        <h1>Bougado</h1>
+        <h3>
+          Illustrator <span className="ampersand">&</span> Front developer
+        </h3>
       </div>
     </section>
   );

@@ -43,7 +43,7 @@
         position: relative;
         left: 15%;
         margin: 0 0 1rem;
-        font-family: "Salsa";
+        font-family: "Gochi Hand";
         font-size: 4.125rem;
         background-image: linear-gradient(to right, $yellow, $dark-blue);
         -webkit-background-clip: text;
@@ -52,7 +52,7 @@
           font-size: 3rem;
         }
         @media (max-width: 410px) {
-            left: 5%;
+          left: 5%;
         }
       }
       p {

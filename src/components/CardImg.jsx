@@ -3,32 +3,85 @@ import Isotope from "isotope-layout";
 import { imgGallery } from "../data/gallery";
 import imagesLoaded from "imagesloaded";
 
-const CardImg = () => {
+const CardImg = ({ isVisible = true }) => {
   const gridRef = useRef(null);
+  const isotopeRef = useRef(null);
   const closeBtnRef = useRef(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [imagesReady, setImagesReady] = useState(false);
 
+  // Initialisation et nettoyage d'Isotope
   useEffect(() => {
-    const images = document.querySelectorAll(".article-image");
-    images.forEach((image) => {
-      const imageItem = image.querySelector("img");
-      const padding = (imageItem.offsetHeight / imageItem.offsetWidth) * 100;
-      image.style.paddingBottom = `${padding}%`;
-      imageItem.classList.add("init");
-    });
+    // Ne rien faire si le composant n'est pas visible ou si gridRef n'existe pas
+    if (!isVisible || !gridRef.current) return;
 
-    const itemsGrid = new Isotope(gridRef.current, {
-      itemSelector: ".article",
-      masonry: {
-        fitWidth: true,
-        gutter: 20,
-      },
-    });
+    // Fonction pour initialiser Isotope
+    const initIsotope = () => {
+      // Calcul des dimensions des images
+      const images = document.querySelectorAll(".article-image");
+      images.forEach((image) => {
+        const imageItem = image.querySelector("img");
+        if (imageItem && imageItem.complete) {
+          const padding =
+            (imageItem.offsetHeight / imageItem.offsetWidth) * 100;
+          image.style.paddingBottom = `${padding}%`;
+          imageItem.classList.add("init");
+        }
+      });
 
-    imagesLoaded(gridRef.current, () => {
-      itemsGrid.layout();
-    });
+      // Initialisation d'Isotope avec un layout en grille plutôt qu'en masonry
+      isotopeRef.current = new Isotope(gridRef.current, {
+        itemSelector: ".article",
+        masonry: {
+          fitWidth: true,
+          gutter: 20,
+          columnWidth: ".article",
+        },
+        transitionDuration: "0.4s",
+      });
 
+      // Utiliser imagesLoaded pour s'assurer que toutes les images sont chargées
+      imagesLoaded(gridRef.current, () => {
+        // Une fois les images chargées, recalculer leurs dimensions
+        images.forEach((image) => {
+          const imageItem = image.querySelector("img");
+          if (imageItem) {
+            const padding =
+              (imageItem.offsetHeight / imageItem.offsetWidth) * 100;
+            image.style.paddingBottom = `${padding}%`;
+            imageItem.classList.add("init");
+          }
+        });
+
+        // Réarranger complètement la mise en page
+        if (isotopeRef.current) {
+          isotopeRef.current.arrange();
+
+          // Pour être absolument sûr, relancer après un court délai
+          setTimeout(() => {
+            if (isotopeRef.current) {
+              isotopeRef.current.arrange();
+            }
+          }, 100);
+        }
+
+        setImagesReady(true);
+      });
+    };
+
+    // Initialiser Isotope
+    initIsotope();
+
+    // Ajouter un événement de redimensionnement pour recalculer la mise en page
+    const handleResize = () => {
+      if (isotopeRef.current) {
+        isotopeRef.current.arrange();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Gestion des clics pour le filtrage
     const documentActions = (e) => {
       const targetElement = e.target;
       if (targetElement.closest(".filter-articles-item")) {
@@ -38,11 +91,15 @@ const CardImg = () => {
           ".filter-articles-item.active"
         );
 
-        itemsGrid.arrange({
-          filter: filterValue === "*" ? "" : `[data-filter="${filterValue}"]`,
-        });
+        if (isotopeRef.current) {
+          isotopeRef.current.arrange({
+            filter: filterValue === "*" ? "" : `[data-filter="${filterValue}"]`,
+          });
+        }
 
-        filterActiveItem.classList.remove("active");
+        if (filterActiveItem) {
+          filterActiveItem.classList.remove("active");
+        }
         filterItem.classList.add("active");
 
         e.preventDefault();
@@ -51,28 +108,45 @@ const CardImg = () => {
 
     document.addEventListener("click", documentActions);
 
+    // Nettoyage
     return () => {
       document.removeEventListener("click", documentActions);
-      itemsGrid.destroy();
+      window.removeEventListener("resize", handleResize);
+      if (isotopeRef.current) {
+        isotopeRef.current.destroy();
+        isotopeRef.current = null;
+      }
     };
-  }, []);
+  }, [isVisible]); // Relance l'effet si la visibilité change
 
+  // Effet secondaire lorsque les images sont prêtes pour forcer un réarrangement
+  useEffect(() => {
+    if (imagesReady && isotopeRef.current) {
+      // Forcer un réarrangement après que tout soit prêt
+      isotopeRef.current.arrange();
+    }
+  }, [imagesReady]);
+
+  // Gestion du lightbox
   useEffect(() => {
     if (selectedImageIndex !== null) {
       document.body.style.overflow = "hidden"; // Désactiver le scroll vertical
 
-      // if (closeBtnRef.current) {
-      //   closeBtnRef.current.focus(); // Focus the close button when lightbox opens
-      // }
-
       const focusableElements =
         "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])";
       const modal = document.querySelector(".lightbox");
+      if (!modal) return;
+
       const firstFocusableElement =
         modal.querySelectorAll(focusableElements)[0];
       const focusableContent = modal.querySelectorAll(focusableElements);
       const lastFocusableElement =
         focusableContent[focusableContent.length - 1];
+
+      // Essayer de mettre le focus sur le bouton de fermeture
+      if (closeBtnRef.current) {
+        closeBtnRef.current.focus();
+      }
 
       const handleTab = (e) => {
         const isTabPressed = e.key === "Tab" || e.keyCode === 9;
@@ -108,7 +182,7 @@ const CardImg = () => {
   };
 
   const showPrevImage = (e) => {
-    e.stopPropagation(); // Empêche la propagation du clic
+    e.stopPropagation();
     setSelectedImageIndex((prevIndex) => {
       const newIndex = prevIndex > 0 ? prevIndex - 1 : imgGallery.length - 1;
       return newIndex;
@@ -116,7 +190,7 @@ const CardImg = () => {
   };
 
   const showNextImage = (e) => {
-    e.stopPropagation(); // Empêche la propagation du clic
+    e.stopPropagation();
     setSelectedImageIndex((prevIndex) => {
       const newIndex = prevIndex < imgGallery.length - 1 ? prevIndex + 1 : 0;
       return newIndex;
@@ -158,7 +232,10 @@ const CardImg = () => {
               Study
             </button>
           </div>
-          <div className="articles-items" ref={gridRef}>
+          <div
+            className={`articles-items ${imagesReady ? "images-ready" : ""}`}
+            ref={gridRef}
+          >
             {imgGallery.map((image, index) => (
               <article
                 data-filter={image.type}
@@ -169,7 +246,15 @@ const CardImg = () => {
                   className="article-image"
                   onClick={() => setSelectedImageIndex(index)}
                 >
-                  <img src={image.img} alt={image.title} />
+                  <img
+                    src={image.img}
+                    alt={image.title}
+                    onLoad={() => {
+                      if (isotopeRef.current) {
+                        isotopeRef.current.arrange();
+                      }
+                    }}
+                  />
                 </div>
               </article>
             ))}

@@ -10,6 +10,9 @@ const Footer = () => {
         </div>
         <div className="social-footer">
           <h6>Social</h6>
+          <a href="https://github.com/BougadoGaboudo" target="_blank">
+            <img className="logoRS" src="img/github.png" alt="Logo GitHub" />
+          </a>
           <a href="https://twitter.com/BougadoGaboudo" target="_blank">
             <img className="logoRS" src="img/twitter.png" alt="Logo Twitter" />
           </a>
@@ -25,7 +28,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="cp">
-        <p>2024 © Bougado</p>
+        <p>2025 © Bougado</p>
       </div>
     </footer>
   );

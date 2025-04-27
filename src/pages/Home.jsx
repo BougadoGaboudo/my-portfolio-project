@@ -3,17 +3,16 @@ import Navbar from "../components/Navbar";
 import HeroArea from "../components/HeroArea";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
-import Preloader from "../components/Preloader";
 import ContentHome from "../components/ContentHome";
+import NavbarHome from "../components/NavbarHome";
 
 const Home = ({ animationFinished }) => {
   return (
     <>
-      {/* <Preloader /> */}
-      <Navbar />
       {animationFinished && (
-        <div className="home-desktop">
+        <div className="hero-container">
           <HeroArea bg={"home-bg"} page={"home"} />
+          <NavbarHome />
         </div>
       )}
       <div className="line-section"></div>
@@ -26,7 +25,6 @@ const Home = ({ animationFinished }) => {
         text={
           <>
             <br />
-
             Illustration is my passion ! I've dedicated four years to studying
             illustration seriously. During that time, I was doing a personal
             challenge I called "Road to be an Artist", where I drew every single
@@ -36,7 +34,9 @@ const Home = ({ animationFinished }) => {
             level ! ( •̀ω •́ゞ)
             <br />
             <br />
-            And I also like coding ! I started learning it in 2023, right after my illustration period. It enables me to showcase my work and share what I've done along my studies. d(´▽｀*)
+            And I also like coding ! I started learning it in 2023, right after
+            my illustration period. It enables me to showcase my work and share
+            what I've done along my studies. d(´▽｀*)
           </>
         }
         img1={"/img/raidenfanart.jpg"}

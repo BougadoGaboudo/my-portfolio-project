@@ -2,10 +2,10 @@ import React from "react";
 
 const Presentation = () => {
   return (
-    <section class="presentation-section">
-      <div class="presentation-wrapper">
-        <img class="presentation-logo" src="img/LogoRond.png" alt="Logo" />
-        <div class="presentation-txt">
+    <section className="presentation-section">
+      <div className="presentation-wrapper">
+        <img className="presentation-logo" src="img/LogoRond.png" alt="Logo" />
+        <div className="presentation-txt">
           <h4>About</h4>
           <h1>Bougado</h1>
           <p>
