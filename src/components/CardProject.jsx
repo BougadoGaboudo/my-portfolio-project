@@ -16,7 +16,11 @@ const CardProject = () => {
                 src={project.img}
                 alt={project.title}
               />
-              <p>{project.description}</p>
+              {Array.isArray(project.description) ? (
+                project.description.map((line, idx) => <p key={idx}>{line}</p>)
+              ) : (
+                <p>{project.description}</p>
+              )}
               <p>Stack : {project.tech}</p>
             </a>
           </div>

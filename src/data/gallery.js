@@ -1,5 +1,23 @@
 export const imgGallery = [
   {
+    title: "Happy New Year 2025",
+    img: "/img/hny2025.jpg",
+    type: "original",
+    style: "articles-item",
+  },
+  {
+    title: "Merry Christmas 2024",
+    img: "/img/noel2024.jpg",
+    type: "original",
+    style: "articles-item",
+  },
+  {
+    title: "Ayaka from Genshin Impact",
+    img: "/img/ayaka.jpg",
+    type: "fanart",
+    style: "articles-item-paysage",
+  },
+  {
     title: "Happy New Year 2024",
     img: "/img/hny2024.jpg",
     type: "original",
@@ -10,12 +28,6 @@ export const imgGallery = [
     img: "/img/yelanfanart.jpg",
     type: "fanart",
     style: "articles-item",
-  },
-  {
-    title: "Ayaka from Genshin Impact",
-    img: "/img/ayaka.jpg",
-    type: "fanart",
-    style: "articles-item-paysage",
   },
   {
     title: "Study",
